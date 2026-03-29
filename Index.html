@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handball LiveStats - Gresik</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">HANDBALL LIVE STATS</h1>
+        <div id="match-timer">30:00</div>
+        <div class="timer-controls">
+            <button onclick="toggleTimer()" id="timer-btn">START</button>
+            <button onclick="resetTimer()">RESET</button>
+        </div>
+    </header>
+
+    <main class="scoreboard">
+        <section class="team-box" id="home">
+            <h2 contenteditable="true">GRESIK TEAM</h2>
+            <div class="score" id="score-home">0</div>
+            <div class="actions">
+                <button class="btn goal" onclick="record('home', 'GOAL')">GOAL</button>
+                <button class="btn miss" onclick="record('home', 'MISS')">MISS</button>
+                <div class="fouls">
+                    <button class="btn yc" onclick="record('home', 'YC')">YC</button>
+                    <button class="btn two-min" onclick="record('home', '2MIN')">2M</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-box" id="away">
+            <h2 contenteditable="true">AWAY TEAM</h2>
+            <div class="score" id="score-away">0</div>
+            <div class="actions">
+                <button class="btn goal" onclick="record('away', 'GOAL')">GOAL</button>
+                <button class="btn miss" onclick="record('away', 'MISS')">MISS</button>
+                <div class="fouls">
+                    <button class="btn yc" onclick="record('away', 'YC')">YC</button>
+                    <button class="btn two-min" onclick="record('away', '2MIN')">2M</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="log-section">
+        <h3>Play-by-Play (Log Kejadian)</h3>
+        <ul id="event-log"></ul>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
